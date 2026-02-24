@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Experiment 4</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    text-align: center;
+    padding-top: 50px;
+}
+
+.container {
+    background: white;
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+h2 {
+    color: #333;
+}
+
+#demo {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #444;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #667eea;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #5641c9;
+    transform: scale(1.05);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<h2>DOM Manipulation and jQuery Example</h2>
+
+<p id="demo">Hello World</p>
+
+<button onclick="changeText()">Change Text (DOM)</button>
+<button id="hideBtn">Hide</button>
+<button id="showBtn">Show</button>
+<button id="toggleBtn">Toggle</button>
+<button id="animateBtn">Animate</button>
+</div>
+
+<script>
+
+function changeText(){
+   document.getElementById("demo").innerHTML = 
+   "Web developer";
+}
+
+$("#hideBtn").click(function(){
+   $("#demo").hide(500);
+});
+
+$("#showBtn").click(function(){
+   $("#demo").show(500);
+});
+
+$("#toggleBtn").click(function(){
+   $("#demo").toggle(500);
+});
+
+$("#animateBtn").click(function(){
+   $("#demo").animate({
+      fontSize: "30px",
+      opacity: 0.5
+   }, 800);
+});
+
+</script>
+
+</body>
+</html>
